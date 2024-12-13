@@ -1,0 +1,149 @@
+/* Slideshow container styling */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 400px; /* Ensures consistent height */
+  /* background-color: #f0f0f0;  Optional background for visibility */
+  padding: 0 10vw; /* Padding for spacing */
+}
+
+.slideshow-images {
+  flex: 3;
+  max-width: 600px;
+  align-self: flex-start;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.gallery-slide {
+  display: none; /* Hidden by default */
+  max-width: 600px;
+  max-height: 400px;
+  animation: slideIn 1s forwards;
+}
+
+.gallery-slide.active {
+  display: block; /* Show active slide */
+  opacity: 1;
+  position: relative;
+}
+
+.gallery-slide img {
+  width: 100%; /* Ensures image scales to parent container */
+  height: 100%; /* Enforces consistent height */
+  max-width: 600px;
+  max-height: 400px;
+  object-fit: cover; /* Ensures images fit without distortion */
+  border-radius: 8px; /* Optional for rounded corners */
+  cursor: pointer;
+}
+
+/* Animation for sliding in the gallery */
+@keyframes slideIn {
+  from {
+    transform: translateX(10%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Overlay for image zoom */
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.overlay img {
+  width: 80%;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.overlay img:hover {
+  transform: scale(1.2); /* Zoom effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .slideshow-container {
+    max-width: 100%;
+    padding: 0 5vw; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .slideshow-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3vw;
+  }
+}
+
+/* Booking form styles */
+.booking__form {
+  display: flex;
+  gap: 20px; /* Adjust spacing between groups as needed */
+}
+
+.input__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px; /* Space between label and input field */
+}
+
+.input-field {
+  width: 200px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.input__btn {
+  align-self: center;
+}
+
+.btn {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #d81b60; /* Optional hover effect */
+}

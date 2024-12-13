@@ -1,0 +1,1337 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+    --primary-color: #e82574;
+    --primary-color-dark: #bc1c5c;
+    --text-dark: #0c0a09;
+    --text-light: #78716c;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+
+
+
+
+.section__subheader {
+    margin-bottom: 0.5rem;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+}
+
+.section__subheader::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translate(1rem, -50%);
+    height: 2px;
+    width: 4rem;
+    background-color: var(--primary-color);
+}
+
+.section__header {
+    max-width: 600px;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3rem;
+    color: var(--text-dark);
+}
+
+.section__description {
+    max-width: 600px;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+img {
+    width: 100%;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    max-width: 120px;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0; /* Remove default body margins */
+  }
+
+.header {
+    /* background-image: url("assets/header.jpg"); */
+    background-image: url("../assets/ayodhya.webp");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+nav {
+    position: relative; /* Keep it relative initially */
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    z-index: 9;
+    transition: top 0.3s, left 0.3s, top 0.3s; /* Smooth transition for top position */
+}
+
+.nav__bar {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the navbar */
+    background-color: var(--primary-color);
+}
+
+.fixed {
+    position: fixed; /* Fixed position when scrolling */
+    top: 0; /* Stick to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    width: 100%; /* Expands to full width */
+    max-width: 100%; /* Overrides max-width to span entire width */
+    background-color: rgb(253, 253, 253); /* Ensure background color is consistent */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Add shadow on scroll */
+    z-index: 9999; /* Ensure it stays above other content */
+    padding: 23px 44px;
+}
+
+
+/* Navbar background color when scrolled */
+.fixed.scrolled {
+    background-color: black; /* Change to black when scrolled */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+}
+
+/* Navbar link color */
+.fixed .nav__links a {
+    color: black; /* Default color for links */
+}
+
+.fixed.scrolled .nav__links a {
+    color: white; /* Change link color to white when scrolled */
+}
+
+/* Dark mode navbar styles */
+body.dark-mode .fixed {
+    background-color: black; /* Default background color for navbar in dark mode */
+    box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.7); /* Pink shadow for dark mode */
+}
+
+/* Links color in dark mode */
+body.dark-mode .nav__links a {
+    color: white; /* Default link color in dark mode */
+}
+
+
+.nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex; /* Change to flex for horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    gap: 2rem; /* Adjust spacing between nav items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav__links.open {
+    transform: translateY(0);
+}
+
+.nav__links a {
+    position: relative;
+    isolation: isolate;
+    padding-bottom: 8px;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+/* Navbar links turn black when scrolled */
+.fixed .nav__links a {
+    color: black; /* Change links to black when navbar is white */
+}
+
+
+.nav__btn {
+    display: none;
+}
+
+/* Hi Noraiz dropdown specific styling */
+.hi-noraiz {
+    margin-right: 0; /* Ensure no extra space between Hi Noraiz and Book Now */
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Book Now button styling */
+.nav__btn.book-now {
+    margin-left: 0; /* No extra margin to the left */
+}
+
+/* Dropdown button styling */
+.nav_btns .dropdown-btn {
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Dropdown Styles */
+.nav_btns .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.nav_btns .dropdown-btn {
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensure the button is centered */
+}
+
+.nav_btns .dropdown-btn:after {
+    content: ""; /* Remove extra dropdown symbol */
+    font-size: 0.8rem;
+}
+
+/* Dropdown Menu */
+.nav_btns .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    z-index: 1000;
+    padding: 0; /* Remove padding */
+}
+
+.nav_btns .dropdown-menu a {
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f0f0f0; /* Optional: add separator between items */
+}
+
+.nav_btns .dropdown-menu a:last-child {
+    border-bottom: none; /* Remove border from last item */
+}
+
+.nav_btns .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show the dropdown when hovered */
+.nav_btns .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav_btns{
+    display: flex;
+}
+
+/* Dark mode navbar */
+nav.dark {
+    background-color: black;
+    color: white;
+}
+
+nav.dark a {
+    color: white;
+}
+
+nav.dark a:hover {
+    color: #d1d1d1; /* Adjust hover color for better contrast */
+}
+
+
+
+.header__container {
+    padding-block: 10rem 15rem;
+}
+
+.header__container p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-align: center;
+    opacity: 0.6;
+}
+
+.header__container h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 4.5rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.header__container h1 span {
+    color: var(--primary-color);
+}
+
+.booking__container {
+    padding-block: 0;
+}
+
+.booking__form {
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--white);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.input__group {
+    flex: 1 1 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.input__group span {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+.input__group label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.input__group input {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    padding-block: 5px;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    outline: none;
+    border: none;
+}
+
+.input__group input::placeholder {
+    color: var(--text-light);
+}
+
+.about__container {
+    overflow: hidden;
+    display: grid;
+    gap: 2rem;
+}
+
+.about__image img {
+    max-width: 450px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.room__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.room__card {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room__card__image {
+    position: relative;
+    isolation: isolate;
+}
+
+.room__card__icons {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    z-index: 1;
+}
+
+.room__card__icons span {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 1.5rem;
+    background-color: var(--white);
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.room__card__icons span:nth-child(1) {
+    color: #f472b6;
+}
+
+.room__card__icons span:nth-child(2) {
+    color: #c084fc;
+}
+
+.room__card__icons span:nth-child(3) {
+    color: #60a5fa;
+}
+
+.room__card__details {
+    padding: 1rem;
+}
+
+.room__card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.room__card p {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.room__card h5 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.room__card h5 span {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+
+
+.discount-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10; /* Ensure the label appears above other elements */
+}
+
+
+.service {
+    background-image: url("https://st.depositphotos.com/1158266/2693/i/450/depositphotos_26931101-Hotel-bell.jpg://media.istockphoto.com/id/1227460337/photo/a-front-desk-bell-on-reception-counter.jpg?s=612x612&w=0&k=20&c=w1A2Ojkvotz-NHqySdeJct60cgtGOTicWFttJMnkxsU=");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.service__container {
+    padding-block: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.service__content {
+    grid-column: 1/2;
+    padding: 2rem 4rem;
+    background-color: var(--white);
+}
+
+body.dark-mode .service__content {
+    background-color: black; /* Black background for dark mode */
+    color: white; /* White text for better contrast */
+}
+
+body.dark-mode .service__list li {
+    color: white; /* White color for list items */
+}
+
+body.dark-mode .service__list span {
+    background-color: #444; /* Darker circle background in dark mode */
+    color: white; /* White icon text in dark mode */
+}
+
+.service__list {
+    list-style: none;
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.service__list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.service__list span {
+    padding: 5px 12px;
+    font-size: 1.75rem;
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    border-radius: 100%;
+}
+
+.service__list li:nth-child(1) span {
+    color: #60a5fa;
+    background-color: #dbeafe;
+}
+
+.service__list li:nth-child(2) span {
+    color: #f472b6;
+    background-color: #fce7f3;
+}
+
+.service__list li:nth-child(3) span {
+    color: #c084fc;
+    background-color: #f3e8ff;
+}
+
+.service__list li:nth-child(4) span {
+    color: #fb7185;
+    background-color: #ffe4e6;
+}
+
+.banner__content {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner__card {
+    text-align: center;
+    flex: 1 1 180px;
+}
+
+.banner__card h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.banner__card p {
+    color: var(--text-light);
+}
+
+.explore :is(.section__subheader,
+.section__header) {
+    text-align: center;
+    margin-inline: auto;
+}
+
+.explore__bg {
+    margin-top: 4rem;
+    padding-block: 3rem;
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, var(--max-width)) minmax(1rem, 1fr);
+    background-image: url("assets/explore.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.explore__content {
+    grid-column: 2/3;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.explore__content p {
+    margin-bottom: 0.5rem;
+}
+
+.explore__content h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: var(--text-dark);
+}
+
+.explore__content .btn {
+    color: var(--primary-color);
+    background-color: var(--white);
+    border: 1px solid var(--primary-color);
+}
+
+.explore__content .btn:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.footer {
+    background-color: var(--text-dark);
+}
+
+.footer__container {
+    display: grid;
+    gap: 4rem 2rem;
+}
+
+.footer__col .section__description {
+    margin-block: 2rem;
+}
+
+.footer__col h4 {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.footer__links {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+.footer__links a {
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+.footer__links a:hover {
+    color: var(--white);
+}
+
+.footer__socials {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer__socials img {
+    max-width: 25px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.footer__socials img:hover {
+    opacity: 1;
+}
+
+.footer__bar {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+@media (width>576px) {
+    .room__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width>768px) {
+    nav {
+        padding: 24px 0px;
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav__bar {
+        padding: 0;
+        background-color: transparent;
+    }
+    .nav__menu__btn {
+        display: none;
+    }
+    .nav__links {
+        padding: 0;
+        width: unset;
+        position: static;
+        transform: none;
+        flex-direction: row;
+        background-color: transparent;
+    }
+    .nav__btn {
+        display: block;
+    }
+    .nav__links a::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: var(--primary-color);
+        transition: 0.3s;
+        transform-origin: left;
+    }
+    .nav__links a:hover::after {
+        width: 100%;
+    }
+    .about__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .room__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .service__content {
+        grid-column: 2/3;
+    }
+    .footer__container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (width>1024px) {
+    .room__grid {
+        gap: 2rem;
+    }
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+}
+
+/* Show button */
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hover effect */
+.scroll-to-top:hover {
+    background-color: #007BFF; /* Highlight color */
+    color: #fff; /* Contrast text color */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+/* Tooltip label */
+.scroll-to-top::after {
+    content: "Scroll to top";
+    position: absolute;
+    top: -30px;
+    right: 55px; /* Adjust to align next to button */
+    background-color: #007BFF; /* Same as hover color */
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Show tooltip on hover */
+.scroll-to-top:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* Typing text style */
+#typed-text {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3rem;
+    color: var(--text-white);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid var(--primary-color);
+    animation: blink 0.7s step-end infinite alternate;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+/* Style for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px;               /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;       /* Background color of the scrollbar track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;    /* Color of the scrollbar handle */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Space between track and thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;    /* Darker color when hovering */
+}
+
+/* Optional for Firefox */
+* {
+    scrollbar-width: thin;              /* Makes scrollbar thinner */
+    scrollbar-color: #888 #f1f1f1;      /* Thumb color and track color */
+}
+
+
+
+
+/* Modal Styling */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.modal-content {
+    display: flex;
+    background: #ffffff;
+    width: 85%;
+    max-width: 950px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    height: 80%; /* Ensure the modal height matches viewport */
+}
+
+/* Left Section (Slideshow) */
+.modal-left {
+    flex: 1;
+    display: flex;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    height: 100%; /* Ensure full height */
+}
+
+.slideshow-container1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the space completely */
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Text Overlay on Image */
+.content {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-align: center; /* Center text horizontally */
+    padding: 0; /* Remove padding */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's size */
+    width: 90%; /* Optional: adjust width for responsive text wrapping */
+}
+
+.content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style: none;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Right Section */
+.modal-right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Tab Switch */
+.tab-switch {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-switch button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #f0f0f0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab-switch button.active-tab {
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-content {
+    display: none;
+}
+
+.form-content.active-form {
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Continue Button */
+.continue-btn {
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+/* Social Login */
+.or-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.circle-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* .google-btn {
+    background: #ea4335;
+} */
+
+.circle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f1f1f1; /* Light background for visibility */
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555; /* Neutral text color */
+    transition: all 0.3s ease-in-out;
+}
+
+.google-btn {
+    color: #db4437; /* Google red */
+}
+
+.mail-btn {
+    color: #0072c6; /* Blue for mail icon */
+}
+
+.circle-btn:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+
+/*.mail-btn {
+    background: #34a853;
+} */
+
+/* Mobile Number Section Styling */
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.country-code-dropdown {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100px;
+    cursor: pointer;
+}
+
+input[type="tel"] {
+    width: calc(100% - 120px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="tel"]:focus {
+    outline: none;
+    border-color: #000;
+}
+
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.close-btn:hover {
+    background: #f0f0f0;
+}
+
+
+.social-login {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Center buttons vertically */
+     /* Full height to align vertically */
+    flex-wrap: wrap; /* Allows buttons to wrap if needed */
+     /* Adds spacing between buttons */
+}
+
+
+
+
+/* Dark mode toggle button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem; /* Space between toggle and "Book Now" button */
+    gap: 0.5rem;
+}
+
+.theme-toggle input[type="checkbox"] {
+    display: none; /* Hide the checkbox */
+}
+
+.toggle-label {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.toggle-label .icon {
+    font-size: 0.8rem;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-label .icon:first-child {
+    opacity: 1; /* Sun icon visible by default */
+}
+
+.toggle-label .icon:last-child {
+    opacity: 0; /* Moon icon hidden by default */
+}
+
+/* When checkbox is checked (dark mode) */
+#theme-switch:checked + .toggle-label {
+    background-color: #333;
+}
+
+#theme-switch:checked + .toggle-label .icon:first-child {
+    opacity: 0; /* Hide sun icon */
+}
+
+#theme-switch:checked + .toggle-label .icon:last-child {
+    opacity: 1; /* Show moon icon */
+}
+
+
+/* Light mode (default) */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+/* Navbar links in dark mode */
+body.dark-mode .nav__links a {
+    color: #ffffff;
+}
+
+/* Navbar links in light mode */
+body.light-mode .nav__links a {
+    color: #000000;
+}
+
+
+/* Dark mode styles */
+
+
+body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, 
+body.dark-mode h5, body.dark-mode h6 {
+    color: yellow; /* Yellow color for smaller headings */
+}
+
+body.dark-mode p,body.dark-mode li, 
+body.dark-mode .normal-text, body.dark-mode li.body {
+    color: white; /* White color for normal text and paragraphs */
+}
+
+
+/* Dark mode styling */
+body.dark-mode {
+    background-color: #121212; /* Example background color for dark mode */
+    color: #ffffff; /* Example text color for dark mode */
+}
+
+body.dark-mode .room__card,
+body.dark-mode .booking__form,
+body.dark-mode .banner__content,
+body.dark-mode .explore__content,
+body.dark-mode .service__content,
+body.dark-mode .scroll-to-top {
+    box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.7); /* Pink shadow for dark mode */
+}
+
+body.dark-mode .room__card__icons span {
+    box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.7); /* Pink shadow for icons */
+}
+
+/* Dark Mode Styling for Navbar
+body.dark-mode .nav__bar.fixed {
+    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.7); /* Pink shadow for navbar 
+    
+    
+} */
+
+/* If you have other styles for light mode, ensure they're not overriding the dark mode styles
+body .nav__bar.fixed {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Example shadow for light mode
+} */
+
+
+/* Specific styles for labels and text that should remain visible */
+.modal-content label, 
+.modal-content .or-text, 
+.modal-content .social-login p {
+    color: initial; /* Ensures it uses the original color defined by the browser or parent */
+    color: #000000; /* Fallback to black color for light mode text */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
